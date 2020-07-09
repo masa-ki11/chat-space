@@ -31,9 +31,8 @@ Things you may want to cover:
 |pass|string|null: false, foreign_key: true|
 
 ### Association
-- has_many :groups
 - has_many :messages
-- belong_to :user_group
+- has_many :user_group
 
 ## messagesテーブル
 
@@ -56,7 +55,8 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belong_to :user_group
+- has_many :messages
+- has_many :user_group
 
 ## user_groupテーブル
 
@@ -66,3 +66,5 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
+- belong_to :user
+- belong_to :group
